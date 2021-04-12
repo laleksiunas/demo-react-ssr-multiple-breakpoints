@@ -1,4 +1,4 @@
-import { themes, ThemeProvider, useTheme } from '../theme';
+import { themes, useTheme } from '../theme';
 import { Carousel } from '../components';
 
 const carouselItems = Array.from({ length: 15 }, (_, index) => ({
@@ -34,12 +34,10 @@ const ThemedCarousel = ({ items }) => {
 const ThemedTitle = () => <h1>Simple carousel{useTheme() < themes.md ? ' (mobile view)' : ''}</h1>;
 
 const Index = () => (
-  <ThemeProvider>
-    <div>
-      <ThemedTitle />
-      <ThemedCarousel items={carouselItems} />
-    </div>
-  </ThemeProvider>
+  <div>
+    <ThemedTitle />
+    <ThemedCarousel items={carouselItems} />
+  </div>
 );
 
 export default Index;

@@ -30,8 +30,8 @@ const Carousel = ({ items = [], itemsPerPage, itemHeight, itemWidth }) => {
         ))}
       </div>
       <div>
-        <button onClick={() => updateIndex(firstColumnIndex - 1)}>Previous</button>
-        <button onClick={() => updateIndex(firstColumnIndex + 1)}>Next</button>
+        <button className={styles.action} onClick={() => updateIndex(firstColumnIndex - 1)}>Previous</button>
+        <button className={styles.action} onClick={() => updateIndex(firstColumnIndex + 1)}>Next</button>
       </div>
     </div>
   );
