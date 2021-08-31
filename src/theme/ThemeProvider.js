@@ -8,9 +8,9 @@ const themeContext = createContext(defaultTheme);
 
 export const useTheme = () => useContext(themeContext);
 
-const ThemeProvider = ({ children }) => {
-  // Use XL theme for SSR and client-side hydration
-  const [currentTheme, setCurrentTheme] = useState(defaultTheme);
+const ThemeProvider = ({ children, initialTheme = defaultTheme }) => {
+  // Default to specific theme for SSR and client-side hydration
+  const [currentTheme, setCurrentTheme] = useState(initialTheme);
 
   useEffect(() => {
     // Initialize correct theme on the client side
